@@ -1,3 +1,7 @@
+@interface NSArrray (Fold)
+- (NSArray *)foldSelector:(SEL)aSel;
+@end
+
 @implementation NSArray (Fold)
 
 - (NSArray *)foldSelector:(SEL)aSel
