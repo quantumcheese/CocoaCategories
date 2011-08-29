@@ -1,7 +1,17 @@
+// MARK: Interfaces
+
 @interface NSArrray (Fold)
 - (NSArray *)foldSelector:(SEL)aSel;
 - (NSArray *)foldBlock:(id(^)(id))aBlock;
 @end
+
+@interface NSMutableArray (Map)
+- (void)mapSelector:(SEL)aSel;
+- (void)mapBlock:(id (^)(id))aBlock;
+@end
+
+// MARK: --
+// MARK: Implementations
 
 @implementation NSArray (Fold)
 
@@ -28,11 +38,6 @@
 
 @end
 
-
-@interface NSMutableArray (Map)
-- (void)mapSelector:(SEL)aSel;
-- (void)mapBlock:(id (^)(id))aBlock;
-@end
 
 @implementation NSMutableArray (Map)
 
