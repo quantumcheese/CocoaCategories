@@ -15,3 +15,24 @@
 }
 
 @end
+
+
+@interface NSMutableArray (Map)
+- (void)mapSelector:(SEL)aSel;
+@end
+
+@implementation NSMutableArray (Map)
+
+- (void)mapSelector:(SEL)aSel
+{
+	for (NSInteger i = 0, count = [self count]; i != count; ++i)
+	{
+		id obj = [self objectAtIndex:i];
+		id replacement = [obj performSelector:aSel];
+		[self replaceObjectAtIndex:i withObject:replacement];
+	}
+}
+
+@end
+
+
