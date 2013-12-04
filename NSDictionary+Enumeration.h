@@ -1,3 +1,5 @@
+#import <Cocoa/Cocoa.h>
+
 // MARK: Interface
 
 @interface NSDictionary (Enumeration)

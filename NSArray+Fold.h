@@ -1,6 +1,8 @@
+#import <Cocoa/Cocoa.h>
+
 // MARK: Interfaces
 
-@interface NSArrray (Fold)
+@interface NSArray (Fold)
 - (NSArray *)foldSelector:(SEL)aSel;
 - (NSArray *)foldBlock:(id(^)(id))aBlock;
 @end
@@ -33,7 +35,6 @@
 		[array addObject:aBlock(obj)];
 	}
 	return [NSArray arrayWithArray:[array autorelease]];
-}
 }
 
 @end
